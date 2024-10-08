@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    char s[100]; // Declare a character array to store the input string
+    int freq[10] = {0}; // Initialize an array to store frequencies of digits 0-9
+
+    // Read the input string from standard input
+    scanf("%s", s);
+
+    // Iterate through each character in the string
+    for (int i = 0; i < strlen(s); i++) { // Change condition to use strlen(s)
+        // Check if the character is a digit
+        if (s[i] >= '0' && s[i] <= '9') {
+            freq[s[i] - '0']++; // Increment the corresponding frequency
+        }
+    }
+
+    // Print the frequency of digits 0-9
+    for (int i = 0; i < 10; i++) { // Change the loop to go from 0 to 9
+        printf("%d ", freq[i]); // Print each frequency followed by a space
+    }
+
+    printf("\n"); // Print a newline at the end
+    
+    return 0;
+}
